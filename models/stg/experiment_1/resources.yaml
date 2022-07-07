@@ -1,0 +1,32 @@
+# Preprocess parameters
+preprocess_params: {
+  raw_data_path: 'data/dataset_v3.csv',  
+  x_train_path: 'data/x_train_model1.csv',
+  x_test_path: 'data/x_test_model1.csv',
+  y_train_path: 'data/y_train_model1.csv',
+  y_test_path: 'data/y_test_model1.csv',
+  max_revenue: 1.8,
+  max_event_1: 545,
+  max_event_2: 64,
+  valid_devices: ['samsung', 'apple', 'huawei', 'xiaomi'],
+  valid_platforms: ['android', 'ios'],
+  valid_sources: ['non-organic', 'organic'],
+  valid_countries: ['ar','br','ca','ch','cl','co','de','es','fr','it','mx','pe','pt','us','ve'],
+  metadata_columns: ['user_id', 'country', 'source', 'platform', 'device_family'],
+  numerical_colums: ['event_1', 'event_2']
+}
+
+# Train params
+artifact_path: 'stg/model_1/artifacts'
+
+# Validate params
+models_path: [
+  'stg/model_1/artifacts/lr',
+  'stg/model_1/artifacts/xgb'
+]
+
+# Prod model
+prod_pipeline_path_source: 'stg/model_1/artifacts/pipeline'
+prod_model_path_source: 'stg/model_1/artifacts/xgb'
+prod_pipeline_path: 'prod/model_1/artifacts/pipeline'
+prod_model_path: 'prod/model_1/artifacts/xgb'
