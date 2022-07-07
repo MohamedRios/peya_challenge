@@ -1,20 +1,17 @@
-# etermax-challenge
+# peya-challenge
 
 ## Descripción
- Este proyecto se llevó adelante con el fin de resolver el desafío de etermax. El enunciado del problema se encuentra en el root de este proyecto.
+ Este proyecto se llevó adelante con el fin de resolver el desafío de PeYa. El enunciado del problema se encuentra en el root de este proyecto.
 Su resolución cuenta en 2 pasos:
 -   Desarrollo del modelo de ML
 -   Deploy del modelo seleccionado usando flask
 
 ## Desarrollo del modelo
  Para esto se creó la carpeta models. En la misma se tienen:
- - Datos: Tanto los orifinales como los transformados para el entrenamiento.
- - Resources yml: Yaml con los datos necesarios para el entrenamiento de los modelos y su deploy.
  - Stg: Carpeta que contiene toda la exploración, desarrollo y selección del modelo. La idea es poder tener trazabilidad de los experimentos.
- - Prod: Modelo productivo.
- - Artifacts: Son los binarios de los modelos y pipelines utilizados.
+ - Prod: Modelo productivo y los artefactos necesarios para su ejecución
 
- ## API flask
+## API flask
    Se creó server.py para la implementación de la API que carga el modelo productivo y el pipeline productivo a partir de los datos del Yaml.
 
 ## Extras
