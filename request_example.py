@@ -18,6 +18,7 @@ r = requests.post(url, json={
         "tipo_propiedad": ["apartamentos"],
         "vivienda_social": [0.0],
         "zona": ["punta carretas"]
+        # precio a estimar: 150000
     })
 
 print(r.json())
