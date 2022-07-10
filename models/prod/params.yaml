@@ -1,0 +1,53 @@
+
+# Paths de los datos a usar
+raw_data_path: 'models/stg/experiment_1/data/num_dataset_houses.csv'
+x_train_path: 'models/stg/experiment_1/data/x_train_model1.csv'
+x_test_path: 'models/stg/experiment_1/data/x_test_model1.csv'
+y_train_path: 'models/stg/experiment_1/data/y_train_model1.csv'
+y_test_path: 'models/stg/experiment_1/data/y_test_model1.csv'
+
+# Parámetros para preproceso
+columns_with_missing_data_to_delete: ['estado', 'zona']
+valid_disposicion: ['al frente', 'contrafrente', 'interior', 'lateral']
+valid_zona: ['pocitos',  'cordon',  'malvin',  'punta carretas',  'centro',  'carrasco',  'la blanqueada',  
+  'parque batlle',  'buceo',  'prado',  'tres cruces',  'pocitos nuevo',  'parque rodo',  'aguada',  
+  'punta gorda',  'puerto buceo',  'union',  'palermo',  'barrio sur',  'brazo oriental',  'carrasco norte',  
+  'ciudad vieja',  'villa biarritz',  'jacinto vera',  'la comercial',  'malvin norte',  'sayago',  'golf',  'reducto',  
+  'parque miramar',  'goes',  'atahualpa',  'cerrito',  'carrasco - barrios con seguridad',  'paso molino',  
+  'carrasco este',  'maronas',  'bella vista',  'colon',  'aires puros',  'villa espanola',  'flor de maronas',  
+  'la teja',  'belvedere',  'penarol',  'capurro',  'nuevo paris',  'cerro',  'villa munoz',  'montevideo',  
+  'villa dolores',  'camino maldonado',  'piedras blancas',  'barra de carrasco',  'arroyo seco',  'larranaga',  
+  'conciliacion',  'perez castellanos',  'punta rieles',  'bolivar',  'jardines del hipodromo',  'ituzaingo',  
+  'la figurita',  'manga',  'bella italia',  'las acacias',  'lezica',  'penarol lavalleja',  'mercado modelo',  
+  'paso de la arena',  'banados de carrasco',  'prado nueva savona',  'villa garcia manga rural',  'shangrila',  
+  'villa argentina',  'capurro bella vista',  'la colorada',  'la caleta']
+zona_alta: ['banados de carrasco', 'barra de carrasco','carrasco','carrasco - barrios con seguridad','carrasco este',
+  'carrasco norte','golf','la caleta','parque miramar','puerto buceo','punta carretas','punta gorda','villa biarritz']
+valid_tipo_propiedad: ['apartamentos', 'casas']
+valid_vivienda_social: [1, 0]
+valid_estado: ['buen estado','excelente estado','a estrenar','en construccion','a reciclar','requiere mantenimiento',
+  'reciclada']
+
+
+# Columnas a usar en los modelos
+input_columns: ['ano_de_construccion','banos','disposicion','dormitorios','estado','garajes','gastos_comunes',
+  'm2_de_la_terraza','m2_del_terreno','m2_edificados','tipo_propiedad','vivienda_social','zona']
+non_ordinal_categorical_features: ['vivienda_social', disposicion_categoria, 'disposicion_is_missing', 'tipo_propiedad',
+                        'estado', 'zona_categoria']
+ordinal_categorical_features: ['banos']
+numerical_features: ['m2_edificados', 'gastos_comunes']
+target: 'price'
+
+# Train params
+models_artifact_path: 'models/stg/experiment_1/artifacts/trained_models'
+pipeline_path: 'models/stg/experiment_1/artifacts'
+
+# Prod model
+prod_pipeline_path_source: 'models/stg/experiment_1/artifacts/pipeline'
+prod_scikit_pipeline_path_source: 'models/stg/experiment_1/artifacts/scikit_pipeline'
+prod_model_path_source: 'models/stg/experiment_1/artifacts/trained_models/xgb'
+prod_params_path_source: 'models/stg/experiment_1/params.yaml'
+prod_pipeline_path: 'models/prod/artifacts/pipeline'
+prod_scikit_pipeline_path: 'models/prod/artifacts/scikit_pipeline'
+prod_model_path: 'models/prod/artifacts/xgb'
+prod_params_path: 'models/prod/params.yaml'

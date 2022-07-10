@@ -5,3 +5,5 @@ pickle
 yaml
 sklearn
 requests
+functools
+initify
