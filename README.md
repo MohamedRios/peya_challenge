@@ -11,10 +11,10 @@ Su resolución cuenta en 2 pasos:
  - Stg: Carpeta que contiene toda la exploración, desarrollo y selección del modelo (agrupado por experimento). La idea es poder tener trazabilidad de los experimentos para su reutilización o verificación. Para esto se creó un archivo yaml por experimento a fin de facilitar la automatización.
  - Prod: Modelo productivo y los artefactos necesarios para su ejecución. A día de hoy se soporta un sólo modelo productivo a la vez.
  Para la utilización del modelo se deberán realizar las siguientes tareas:
- - Completar el resources.yaml del experimento a implementar (para el experimento_1 ya está completo). 
+ - Completar el params.yaml del experimento a implementar (para el experimento_1 ya está completo). 
  - Ejecutar preprocess.ipynb que generará el pipeline (mismo que usará la API) y los datasets para entrenar.
  - Ejecutar train.ipynb que generará los modelos a validar.
- - Ejecutar validate.ipynb para seleccionar el mejor modelo y completar el resources.yaml con los datos del modelo a productizar (para para el experimento_1 ya está completo). 
+ - Ejecutar validate.ipynb para seleccionar el mejor modelo y completar el params.yaml con los datos del modelo a productizar (para para el experimento_1 ya está completo). 
  - Ejecutar deploy.ipynb que llevará el modelo seleccionado y su pipeline a la carpeta prod para que la API pueda utilizarlo.
 
 ## API flask
@@ -40,7 +40,7 @@ Para deploy:
 - Posibilidad de tener share productivo de modelos
 - Posibilidad de modelos en BKG
 - Dockerizar
-- Soportar valores nulos de entrada (hoy se descarta en caso de tener nulo en alguna que no contemple el caso "desconocido")
+- Soportar valores distintos a los esperados
 
 ## Conclusiones
 Si bien este proyecto es sólo una muestra al cual le falta muchísimo, me parece un buen puntapié para comenzar a hacer ML engineering.
